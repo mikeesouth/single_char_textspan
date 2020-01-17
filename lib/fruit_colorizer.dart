@@ -16,9 +16,11 @@ class FruitColorizer extends TextEditingController {
       onMatch: (Match match) {
         children.add(
             TextSpan(text: match[0], style: style.merge(mapping[match[0]])));
+        return '';
       },
       onNonMatch: (String text) {
         children.add(TextSpan(text: text, style: style));
+        return '';
       },
     );
     return TextSpan(style: style, children: children);
